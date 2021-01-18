@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 3010;
 const HOST = "localhost";
 const API_SERVICE_URL = "https://libris-qa.kb.se/"
 
