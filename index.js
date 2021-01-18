@@ -5,6 +5,8 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+var apiRoutes = express.Router();
+
 const PORT = 3010;
 const HOST = "localhost";
 const API_SERVICE_URL = "https://libris-qa.kb.se/"
@@ -48,6 +50,8 @@ app.use('/', createProxyMiddleware({
         [`^/`]: '',
     },
 }));
+
+app.use('/librisproxy', apiRoutes);
 
 // Start the Proxy
 app.listen(PORT, HOST, () => {
