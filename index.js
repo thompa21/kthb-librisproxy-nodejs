@@ -11,7 +11,7 @@ const PORT = 3010;
 const HOST = "localhost";
 const API_SERVICE_URL = "https://libris-qa.kb.se/"
 
-app.get('/info', (req, res, next) => {
+apiRoutes.get('/info', (req, res, next) => {
     res.send('This is a proxy service which proxies to Billing and Account APIs.');
 });
 
