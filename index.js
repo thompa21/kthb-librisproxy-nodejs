@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -15,6 +17,7 @@ apiRoutes.get('/info', (req, res, next) => {
     res.send('This is a proxy service which proxies to Billing and Account APIs.');
 });
 
+/*
 // Authorization
 apiRoutes.use('', (req, res, next) => {
     if (req.headers.authorization) {
@@ -42,6 +45,9 @@ QMvPRMO6xf4W1+wn8kG/ejLif+acanJeRoDdYkNfw4p9AL1MB/9trvalg+KfX2Mp
     }
 });
 
+*/
+
+/*
 apiRoutes.use('/', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
@@ -49,10 +55,12 @@ apiRoutes.use('/', createProxyMiddleware({
         [`^/`]: '',
     },
 }));
+*/
 
 app.use('/librisproxy', apiRoutes);
 
 // Start the Proxy
-app.listen(PORT, () => {
-    console.log(`Starting Proxy at ${HOST}:${PORT}`);
+var server = app.listen(process.env.PORT || 3002, function () {
+    var port = server.address().port;
+	console.log("App now running on port", port);
 });
