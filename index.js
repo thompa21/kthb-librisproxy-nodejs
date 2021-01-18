@@ -16,9 +16,8 @@ apiRoutes.get('/info', (req, res, next) => {
 });
 
 // Authorization
-app.use('', (req, res, next) => {
+apiRoutes.use('', (req, res, next) => {
     if (req.headers.authorization) {
-        //console.log(req.headers.authorization)
         //Alma Cloud App JWT
         const publicKey = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo0h874QlymQoEhLZM5KS
@@ -43,7 +42,7 @@ QMvPRMO6xf4W1+wn8kG/ejLif+acanJeRoDdYkNfw4p9AL1MB/9trvalg+KfX2Mp
     }
 });
 
-app.use('/', createProxyMiddleware({
+apiRoutes.use('/', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
     pathRewrite: {
