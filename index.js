@@ -17,7 +17,7 @@ apiRoutes.get('/info', (req, res, next) => {
     res.send('This is a proxy service which proxies to Billing and Account APIs.');
 });
 
-/*
+
 // Authorization
 apiRoutes.use('', (req, res, next) => {
     if (req.headers.authorization) {
@@ -45,9 +45,8 @@ QMvPRMO6xf4W1+wn8kG/ejLif+acanJeRoDdYkNfw4p9AL1MB/9trvalg+KfX2Mp
     }
 });
 
-*/
 
-/*
+
 apiRoutes.use('/', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
@@ -55,7 +54,7 @@ apiRoutes.use('/', createProxyMiddleware({
         [`^/`]: '',
     },
 }));
-*/
+
 
 app.use('/librisproxy', apiRoutes);
 
