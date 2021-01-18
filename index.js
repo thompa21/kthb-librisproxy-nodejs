@@ -53,6 +53,6 @@ apiRoutes.use('/', createProxyMiddleware({
 app.use('/librisproxy', apiRoutes);
 
 // Start the Proxy
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     console.log(`Starting Proxy at ${HOST}:${PORT}`);
 });
