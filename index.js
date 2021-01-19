@@ -53,6 +53,7 @@ apiRoutes.use('/libris', createProxyMiddleware({
     pathRewrite: {
         [`^/libris`]: '',
     },
+    logLevel: 'debug'
 }));
 
 
