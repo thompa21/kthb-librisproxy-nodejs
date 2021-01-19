@@ -20,6 +20,7 @@ apiRoutes.get('/info', (req, res, next) => {
 
 // Authorization
 apiRoutes.use('', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
     if (req.headers.authorization) {
         //Alma Cloud App JWT
         const publicKey = `-----BEGIN PUBLIC KEY-----
