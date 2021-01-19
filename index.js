@@ -7,6 +7,10 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+var cors = require('cors')
+
+app.use(cors())
+
 var apiRoutes = express.Router();
 
 const PORT = 3010;
@@ -20,7 +24,6 @@ apiRoutes.get('/info', (req, res, next) => {
 
 // Authorization
 apiRoutes.use('', (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
     if (req.headers.authorization) {
         //Alma Cloud App JWT
         const publicKey = `-----BEGIN PUBLIC KEY-----
