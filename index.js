@@ -51,7 +51,7 @@ apiRoutes.use('/libris', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
     pathRewrite: {
-        [`^/libris`]: '',
+        [`^/librisproxy/libris`]: '',
     },
     logLevel: 'debug'
 }));
