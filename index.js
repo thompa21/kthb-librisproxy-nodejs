@@ -47,11 +47,11 @@ QMvPRMO6xf4W1+wn8kG/ejLif+acanJeRoDdYkNfw4p9AL1MB/9trvalg+KfX2Mp
 
 
 
-apiRoutes.use('/', createProxyMiddleware({
+apiRoutes.use('/libris', createProxyMiddleware({
     target: API_SERVICE_URL,
     changeOrigin: true,
     pathRewrite: {
-        [`^/`]: '',
+        [`^/libris`]: '',
     },
 }));
 
