@@ -22,6 +22,7 @@ apiRoutes.use('', (req, res, next) => {
         try {
             token = req.headers.authorization.slice(7, req.headers.authorization.length);
             const verified = jwt.verify(token, publicKey, {algorithm: 'RS256'});
+            console.log(verified)
             next();
         } catch (e) {
             return res.status(401).send({ auth: false, message: 'Failed to authenticate token, ' + e.message });
