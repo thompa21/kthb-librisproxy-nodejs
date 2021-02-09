@@ -13,7 +13,7 @@ app.use(cors())
 var apiRoutes = express.Router();
 
 apiRoutes.get('/info', (req, res, next) => {
-    res.send('This is a proxy service which proxies to Libris APIs.');
+    res.json('This is a proxy service which proxies to Libris APIs.');
 });
 
 // Validate alma token
