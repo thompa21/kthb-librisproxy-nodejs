@@ -13,6 +13,9 @@ app.use(cors())
 var apiRoutes = express.Router();
 
 apiRoutes.get('/info', (req, res, next) => {
+    setTimeout(()=>{
+        console.log("waiting")
+    }, 5000);
     res.json('This is a proxy service which proxies to Libris APIs.');
 });
 
