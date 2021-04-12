@@ -48,7 +48,7 @@ apiRoutes.use('/librisref', createProxyMiddleware({
     target: process.env.API_LIBRIS_REF_URL,
     changeOrigin: true,
     pathRewrite: {
-        [process.env.LIBRISREWRITE]: '',
+        [process.env.LIBRISREFREWRITE]: '',
     },
     logLevel: process.env.LOGLEVEL
 }));
