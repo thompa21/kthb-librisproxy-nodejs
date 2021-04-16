@@ -21,9 +21,11 @@ apiRoutes.get('/info', (req, res, next) => {
 
 // Validate alma token
 apiRoutes.use('', (req, res, next) => {
-    if (req.headers.authorization) {
+    if (req.headers.token) {
         try {
-            token = req.headers.authorization.slice(7, req.headers.authorization.length);
+            //token = req.headers.authorization.slice(7, req.headers.authorization.length);
+            token = req.headers.token;
+            console.log(token)
             const verified = jwt.verify(token, publicKey, {algorithm: 'RS256'});
             console.log(verified)
             next();
